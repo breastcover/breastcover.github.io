@@ -1,0 +1,45 @@
+class Solution {
+
+    int order(char ch)
+    {
+        if(ch=='I')
+            return 1;
+        else if(ch=='V')
+            return 5;
+        else if(ch=='X')
+            return 10;
+        else if(ch=='L')
+            return 50;
+        else if(ch=='C')
+            return 100;
+        else if(ch=='D')
+            return 500;
+        else if(ch=='M')
+            return 1000;
+        else
+            return -1;
+    }
+public:
+    int romanToInt(string s) {
+        char ch[s.size()];
+        strcpy(ch,s.c_str());
+        int sum=0;
+        int flag=0;
+        for(int i=1;i<s.size();++i)
+        {
+            if(order(ch[i-1])<order(ch[i]))
+            {
+                sum=sum+order(ch[i])-order(ch[i-1]);
+                ++i;
+
+            }
+            else
+            {
+               sum+=order(ch[i-1]);
+            }
+        }
+        if(s.size()==1||order(ch[s.size()-2])>=order(ch[s.size()-1]))
+                sum+=order(ch[s.size()-1]);
+        return sum;
+    }
+};
