@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>临床表现</title>
+    <style>
+        #rollCon{width: 80%;text-align:center;display: block;overflow: hidden;color: black;height: 35%;position: absolute;top: 35%;left: 10%;}
+        #rollSubject{height: auto;}
+        #rollCopy{height: auto;}
+    </style>
+    <link rel="shortcut icon" href="../images/rocket.png" type="image/png">
+</head>
+<body background="../images/clinical.jpg">
+  <h2 align="center" style="margin-top:120px">临床表现</h2>
+<div id="rollCon">
+    <div id="rollSubject">
+        <p>1.社会交流障碍</p>
+        <p>2.语言交流障碍</p>
+        <p>3.重复刻板行为</p>
+        <p>4.智力异常 </p>
+        <p>5.感觉异常</p>
+        <p>6.多动、注意力分散、发脾气、攻击、自伤等 </p>
+        <p>7.孤独离群，不会与人建立正常的联系</p>
+        <p>8.言语障碍十分突出</p>
+        <p>9.兴趣狭窄，行为刻板重复，强烈要求环境维持不变</p>
+        <p>10.大多智力发育落后及不均衡</p>
+    </div>
+    <div id="rollCopy"></div>
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    var scrollTop = window.pageYOffset|| document.documentElement.scrollTop || document.body.scrollTop;
+    var rollCon = document.getElementById('rollCon');
+    var rollSubject = document.getElementById('rollSubject');
+    var rollCopy = document.getElementById('rollCopy');
+    rollCopy.innerHTML = rollSubject.innerHTML;
+    if(($('#rollSubject').height()>0)&&($('#rollSubject').height()<$('#rollCon').height())){
+        $('#rollCon').css('height',$('#rollSubject').height());
+        setInterval(Marquee, 50);
+    }else if(($('#rollSubject').height()>0)&&($('#rollSubject').height()>=$('#rollCon').height())){
+        setInterval(Marquee, 50);
+    }
+    function Marquee() {
+        if ((rollCopy.offsetTop-rollSubject.offsetTop)<rollCon.scrollTop)
+            rollCon.scrollTop =0;
+        else {
+            rollCon.scrollTop++;
+        }
+    }
+</script>
+</body>
