@@ -164,7 +164,7 @@
 }
 
 .touchPDF > .pdf-outerdiv > .pdf-tabs > .tab.large {
-    height: 140px;
+    height: 80px;
 }
 .touchPDF > .pdf-outerdiv > .pdf-tabs > .tab.large span {
 	top: auto;
