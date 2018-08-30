@@ -32,6 +32,20 @@
 	$(function() {
 		$("#myPDF").pdf( {
 			source: "../pdf/math.pdf",
+			tabs: [
+				{title: "Section 1", page: 1, color: "orange"},
+				{title: "Section 2", page: 11, color: "green"},
+				{title: "Section 3", page: 17, color: "blue"},
+        {title: "Section 4", page: 36, color: "beige"},
+        {title: "Section 5", page: 41, color: "brown"},
+        {title: "Section 6", page: 56, color: "yellow"},
+        {title: "Section 7", page: 66, color: "white"},
+        {title: "Section 8", page: 72, color: "orange"},
+        {title: "Section 9", page: 80, color: "green"},
+        {title: "Section 10", page: 82, color: "blue"},
+        {title: "Section 11", page: 90, color: "beige"},
+        {title: "Section 12", page: 82, color: "yellow"},
+			]
 
 		} );
 	});

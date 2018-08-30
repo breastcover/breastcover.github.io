@@ -52,19 +52,26 @@
 }
 .touchPDF > .pdf-outerdiv > .pdf-toolbar > .pdf-button {
     display: inline-block;
+
+
 }
+
+
+
 .touchPDF > .pdf-outerdiv > .pdf-toolbar > .pdf-button > .pdf-page-count {
     display: inline-block;
     min-width: 80px;
     text-align: center;
+
 }
 
 .touchPDF > .pdf-outerdiv > .pdf-viewer {
     border: 0px solid #404040;
-    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.4); 
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.4);
     z-index: 2000;
     background-color: #ffffff;
     overflow: hidden;
+
 }
 .touchPDF > .pdf-outerdiv > .pdf-viewer > .pdf-drag {
     position: absolute;
@@ -121,7 +128,7 @@
     width: 100px;
     height: 50px;
     cursor: pointer;
-    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.5); 
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.5);
 	border-style: solid;
 	border-color: #404040;
     border-width: 1px 0 1px 1px;
@@ -205,5 +212,3 @@
     background-color: #000000;
     color: white;
 }
-
-
