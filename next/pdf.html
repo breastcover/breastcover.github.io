@@ -15,8 +15,7 @@
 	</style>
 </head>
 <body>
-  <h3 style="padding-left:30px;padding-right:30px;text-align:center">
-  	测试</h3>
+
 <div id="myPDF" style="height: 95%; width: 95%; margin: auto;"></div>
 
 
@@ -36,6 +35,14 @@
 
 		} );
 	});
+  PDFJS.getDocument({url:"../pdf/demo.pdf",rangeChunkSize:65536*16}).then(function(myPDF) {
+       pdfDoc = myPDF;
+       document.getElementById('page_count').textContent = pdfDoc.numPages;
+
+       // Initial/first page rendering
+       renderPage(pageNum);
+
+  })
 
 </script>
 </body>
