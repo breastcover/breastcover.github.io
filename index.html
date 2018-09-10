@@ -7,64 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="shortcut icon" href="images/rocket.png" type="image/png">
 <link rel="stylesheet" href="assets/css/main.css" />
-<style type="text/css">
-*{margin:0;padding:0;list-style-type:none;}
-a,img{border:0;}
 
-
-/* pop */
-#pop{background:#fff;width:260px;border:1px solid #e0e0e0;font-size:12px;position:fixed;right:10px;bottom:10px;}
-#popHead{line-height:25px;background:#f6f0f3;border-bottom:1px solid #e0e0e0;position:relative;font-size:12px;padding:0 0 0 10px;}
-#popHead h2{font-size:14px;color:#666;line-height:32px;height:32px;}
-#popHead #popClose{position:absolute;right:10px;top:1px;}
-#popHead a#popClose:hover{color:#f00;cursor:pointer;}
-#popContent{padding:5px 10px;}
-#popTitle a{line-height:24px;font-size:14px;font-family:'微软雅黑';color:#333;font-weight:bold;text-decoration:none;}
-#popTitle a:hover{color:#f60;}
-#popIntro{text-indent:24px;line-height:160%;margin:5px 0;color:#666;}
-#popMore{text-align:center ;border-top:1px dotted #ccc;line-height:24px;margin:8px 0 0 0;}
-#popMore a{color:#f60;}
-#popMore a:hover{color:#f00;}
-.close { position:absolute; right:4px; top:-1px; color:#FFFFFF; cursor:pointer}
-</style>
-<script type="text/javascript">
-function tips_pop(){
- var MsgPop=document.getElementById("pop");//获取窗口这个对象,即ID为winpop的对象
- var popH=parseInt(MsgPop.style.height);//用parseInt将对象的高度转化为数字,以方便下面比较
-  if (popH==0){         //如果窗口的高度是0
-  MsgPop.style.display="block";//那么将隐藏的窗口显示出来
- show=setInterval("changeH('up')",1);//开始以每0.002秒调用函数changeH("up"),即每0.002秒向上移动一次
-  }
- else {         //否则
-  hide=setInterval("changeH('down')",1);//开始以每0.002秒调用函数changeH("down"),即每0.002秒向下移动一次
- }
-}
-function changeH(str) {
-var MsgPop=document.getElementById("pop");
-var popH=parseInt(MsgPop.style.height);
-if(str=="up"){     //如果这个参数是UP
- if (popH<=120){    //如果转化为数值的高度小于等于100
- MsgPop.style.height=(popH+4).toString()+"px";//高度增加4个象素
- }
- else{
- clearInterval(show);//否则就取消这个函数调用,意思就是如果高度超过100象度了,就不再增长了
- }
-}
-if(str=="down"){
- if (popH>=4){       //如果这个参数是down
- MsgPop.style.height=(popH-4).toString()+"px";//那么窗口的高度减少4个象素
- }
- else{        //否则
- clearInterval(hide);    //否则就取消这个函数调用,意思就是如果高度小于4个象度的时候,就不再减了
- MsgPop.style.display="none";  //因为窗口有边框,所以还是可以看见1~2象素没缩进去,这时候就把DIV隐藏掉
- }
-}
-}
-window.onload=function(){    //加载
-document.getElementById('pop').style.height='0px';//我不知道为什么要初始化这个高度,CSS里不是已经初始化了吗,知道的
-setTimeout("tips_pop()",800);     //3秒后调用tips_pop()这个函数
-}
-</script>
 <style>
 #p1,#p2,#p3{
 	text-align:justify;text-justify:inter-ideograph;text-indent:0.9cm;
@@ -185,18 +128,7 @@ setTimeout("tips_pop()",800);     //3秒后调用tips_pop()这个函数
 		</footer>
 
 </div>
-<div id="pop" style="display:none;">
-		<div id="popHead"> <a id="popClose" title="关闭">关闭</a>
-				<h3>招聘</h3>
-		</div>
-		<div id="popContent">
-				<dl>
-						<dt id="popTitle">欢迎加入浙江力聚！</dt>
-						<dd id="popIntro"></dd>
-				</dl>
-<p  id="popMore"><a href="" target="_blank">面试登记表下载</a></p>
-		</div>
-</div>
+
 
 <!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
