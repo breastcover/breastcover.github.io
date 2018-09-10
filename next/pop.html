@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<metahttp-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>JavaScript实现网页右下角弹出窗口代码</title>
+</head>
+<style type="text/css">
+#winpop { width:200px; height:0px;position:absolute; right:0; bottom:0; border:1px solid #666; margin:0;padding:1px; overflow:hidden; display:none;}
+#winpop .title { width:100%; height:22px;line-height:20px; background:#FFCC00; font-weight:bold; text-align:center;font-size:12px;}
+#winpop .con { width:100%; height:90px;line-height:80px; font-weight:bold; font-size:12px; color:#FF0000;text-decoration:underline; text-align:center} /* http://www.webdm.cn */
+#silu { font-size:12px; color:#666;position:absolute; right:0; text-align:right; text-decoration:underline;line-height:22px;}
+.close { position:absolute; right:4px;top:-1px; color:#FFF; cursor:pointer}
+</style>
+<script type="text/javascript">
+function tips_pop(){
+ var MsgPop=document.getElementById("winpop");
+ var popH=parseInt(MsgPop.style.height);//将对象的高度转化为数字
+  if (popH==0){
+  MsgPop.style.display="block";//显示隐藏的窗口
+ show=setInterval("changeH('up')",2);
+   }
+ else {
+  hide=setInterval("changeH('down')",2);
+  }
+}
+function changeH(str) {
+ varMsgPop=document.getElementById("winpop");
+ varpopH=parseInt(MsgPop.style.height);
+ if(str=="up"){
+  if(popH<=100){
+ MsgPop.style.height=(popH+4).toString()+"px";
+  }
+ else{
+ clearInterval(show);
+  }
+ }
+ if(str=="down"){
+  if(popH>=4){
+ MsgPop.style.height=(popH-4).toString()+"px";
+  }
+ else{
+ clearInterval(hide);
+ MsgPop.style.display="none"; //隐藏DIV
+  }
+ }
+}
+window.onload=function(){//加载
+document.getElementById('winpop').style.height='0px';
+setTimeout("tips_pop()",800);//3秒后调用tips_pop()这个函数
+}
+</script>
+<body>
+<div id="silu">
+<button onclick="tips_pop()">3秒后会在右下角自动弹出窗口，如果没有弹出请点击这个按钮</button>
+</div>
+<div id="winpop">
+ <div class="title">您有新的短消息！<span class="close" onclick="tips_pop()">X</span></div>
+   <div class="con">1条<ahref="http://www.luenuo.com">经典语录</a>(</div>
+</div>
+</body>
+</html>
