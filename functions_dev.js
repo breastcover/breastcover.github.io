@@ -113,21 +113,7 @@ function timeElapse(date, mode) {
 	minutes=Math.floor(leave2/(60*1000));
 	var leave3=leave2%(60*1000);
 	seconds=Math.round(leave3/1000);
-	if (mode == 1) {
-		days = current.getDate() - date.getDate();
-		if (days < 0) {
-			days += getDaysInMonth(current.getMonth());
-			current.setDate(current.getDate() - 1);
-		}
-		months = current.getMonth() - date.getMonth();
-		if (months <= 0) {
-			months += 12;
-			current.setYear(current.getFullYear() - 1);
-		}
-		years = current.getFullYear() - date.getFullYear();
-	} else {
-		days = Math.floor((current.getTime() - date.getTime()) / (1000 * 3600 * 24));
-	}
+
 
 	if (hours < 10) {
 		hours = "0" + hours;
