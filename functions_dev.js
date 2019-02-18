@@ -15,7 +15,7 @@ $(function () {
     gardenCtx = gardenCanvas.getContext("2d");
     gardenCtx.globalCompositeOperation = "lighter";
     garden = new Garden(gardenCtx, gardenCanvas);
-	
+
 	$("#content").css("width", $loveHeart.width() + $("#code").width());
 	$("#content").css("height", Math.max($loveHeart.height(), $("#code").height()));
 	$("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2, 10));
@@ -117,7 +117,7 @@ function timeElapse(date, mode) {
 	}
 	hours = current.getHours() - date.getHours();
 	if (hours < 0) {
-		hours += 60;
+		hours += 24;
 		current.setDate(current.getDate() - 1);
 	}
 	if (mode == 1) {
@@ -152,7 +152,7 @@ function timeElapse(date, mode) {
 	result += "<span class=\"digit\">" + hours + "</span> hr "
 	result += "<span class=\"digit\">" + minutes + "</span> min "
 	result += "<span class=\"digit\">" + seconds + "</span> sec";
-	
+
 	$("#elapseClock").html(result);
 }
 
