@@ -105,21 +105,14 @@ function timeElapse(date, mode) {
 	var hours = NaN;
 	var minutes = NaN;
 	var seconds = NaN;
-	seconds = current.getSeconds() - date.getSeconds();
-	if (seconds < 0) {
-		seconds += 60;
-		current.setMinutes(current.getMinutes() - 1);
-	}
-	minutes = current.getMinutes() - date.getMinutes();
-	if (minutes < 0) {
-		minutes += 60;
-		current.setHours(current.getHours() - 1);
-	}
-	hours = current.getHours() - date.getHours();
-	if (hours < 0) {
-		hours += 24;
-		current.setDate(current.getDate() - 1);
-	}
+	var dateDiff=current.getTime()-date.getTime();
+	days=Math.floor(dateDiff / (24 * 3600 * 1000));
+	var leave1=dateDiff%(24*3600*1000);
+	hours=Math.floor(leave1/(3600*1000));
+	var leave2=leave1%(3600*1000);
+	minutes=Math.floor(leave2/(60*1000));
+	var leave3=leave2%(60*1000);
+	seconds=Math.round(leave3/1000);
 	if (mode == 1) {
 		days = current.getDate() - date.getDate();
 		if (days < 0) {
